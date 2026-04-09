@@ -1,10 +1,89 @@
-<body style="margin:0; background:black;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triskelis Art</title>
 
-<img src="FullPageMock3.jpg" style="width:100%; display:block;">
-  <div class="nav-links">
-  <a href="artwork.html">Artwork</a>
-  <a href="information.html">Information</a>
-  <a href="patronage.html">Patronage</a>
-</div>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      font-family: "Book Antiqua", serif;
+    }
 
+    .page-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+      background: black;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 60px;
+      z-index: 2;
+      flex-wrap: nowrap;
+    }
+
+    .nav-links a {
+      color: #00aaff;
+      text-decoration: none;
+      font-size: 72px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.75;
+    }
+
+    @media (max-width: 1100px) {
+      .nav-links a {
+        font-size: 54px;
+      }
+
+      .nav-links {
+        gap: 35px;
+        bottom: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        bottom: 20px;
+      }
+
+      .nav-links a {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <img src="resources/FullPageMock3.jpg" alt="Triskelis Art homepage" class="hero-image">
+
+    <div class="nav-links">
+      <a href="artwork.html">Artwork</a>
+      <a href="information.html">Information</a>
+      <a href="patronage.html">Patronage</a>
+    </div>
+  </div>
 </body>
+</html>
