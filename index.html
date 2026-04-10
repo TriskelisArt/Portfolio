@@ -38,19 +38,41 @@
     }
 
     .nav-links a {
-  color: #00aaff;
-  text-decoration: none;
-  font-size: 72px;
-  line-height: 1;
-  white-space: nowrap;
-  text-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
-  transition: all 0.3s ease;
-}
+      color: #00aaff;
+      text-decoration: none;
+      font-size: 72px;
+      line-height: 1;
+      white-space: nowrap;
+      text-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
+      transition: all 0.3s ease;
+    }
 
     .nav-links a:hover {
-  text-shadow: 0 0 18px rgba(0, 170, 255, 1),
-               0 0 30px rgba(0, 170, 255, 0.8);
-}
+      text-shadow: 0 0 18px rgba(0, 170, 255, 1),
+                   0 0 30px rgba(0, 170, 255, 0.8);
+    }
+
+    /* CONTACT LINK (separate row below) */
+    .contact-link {
+      position: absolute;
+      bottom: 28%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .contact-link a {
+      color: #00aaff;
+      text-decoration: none;
+      font-size: 20pt;
+      text-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .contact-link a:hover {
+      text-shadow: 0 0 18px rgba(0, 170, 255, 1),
+                   0 0 30px rgba(0, 170, 255, 0.8);
+    }
 
     @media (max-width: 1100px) {
       .nav-links a {
@@ -60,6 +82,10 @@
       .nav-links {
         gap: 35px;
         bottom: 30px;
+      }
+
+      .contact-link {
+        bottom: 80px;
       }
     }
 
@@ -74,6 +100,14 @@
       .nav-links a {
         font-size: 36px;
       }
+
+      .contact-link {
+        bottom: 140px;
+      }
+
+      .contact-link a {
+        font-size: 18pt;
+      }
     }
   </style>
 </head>
@@ -87,6 +121,21 @@
       <a href="information.html">INFORMATION</a>
       <a href="patronage.html">PATRONAGE</a>
     </div>
+
+    <!-- CONTACT LINK -->
+    <div class="contact-link">
+      <a id="contact-email" href="#">CONTACT</a>
+    </div>
+
   </div>
+
+  <!-- Email Obfuscation Script -->
+  <script>
+    const user = "jmiberg";
+    const domain = "fortlewis.edu";
+    const emailLink = document.getElementById("contact-email");
+
+    emailLink.href = "mailto:" + user + "@" + domain;
+  </script>
 </body>
 </html>
