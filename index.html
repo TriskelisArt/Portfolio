@@ -26,15 +26,25 @@
       display: block;
     }
 
-    .nav-links {
+    /* SINGLE OVERLAY CONTAINER */
+    .overlay-content {
       position: absolute;
-      bottom: 40%;
+      bottom: 12%;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 60px;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
       z-index: 2;
+      width: 100%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 60px;
       flex-wrap: nowrap;
+      justify-content: center;
     }
 
     .nav-links a {
@@ -48,17 +58,9 @@
     }
 
     .nav-links a:hover {
-      text-shadow: 0 0 18px rgba(0, 170, 255, 1),
-                   0 0 30px rgba(0, 170, 255, 0.8);
-    }
-
-    /* CONTACT LINK (separate row below) */
-    .contact-link {
-      position: absolute;
-      bottom: 35%;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
+      text-shadow:
+        0 0 18px rgba(0, 170, 255, 1),
+        0 0 30px rgba(0, 170, 255, 0.8);
     }
 
     .contact-link a {
@@ -70,39 +72,44 @@
     }
 
     .contact-link a:hover {
-      text-shadow: 0 0 18px rgba(0, 170, 255, 1),
-                   0 0 30px rgba(0, 170, 255, 0.8);
+      text-shadow:
+        0 0 18px rgba(0, 170, 255, 1),
+        0 0 30px rgba(0, 170, 255, 0.8);
     }
 
+    /* TABLET */
     @media (max-width: 1100px) {
-      .nav-links a {
-        font-size: 54px;
+
+      .overlay-content {
+        bottom: 8%;
+        gap: 22px;
       }
 
       .nav-links {
         gap: 35px;
-        bottom: 30px;
       }
 
-      .contact-link {
-        bottom: 80px;
+      .nav-links a {
+        font-size: 54px;
       }
     }
 
+    /* MOBILE */
     @media (max-width: 768px) {
+
+      .overlay-content {
+        bottom: 6%;
+        gap: 18px;
+      }
+
       .nav-links {
         flex-direction: column;
         align-items: center;
         gap: 18px;
-        bottom: 20px;
       }
 
       .nav-links a {
         font-size: 36px;
-      }
-
-      .contact-link {
-        bottom: 140px;
       }
 
       .contact-link a {
@@ -113,18 +120,28 @@
 </head>
 
 <body>
+
   <div class="page-wrapper">
-    <img src="resources/FullPageMock3.jpg" alt="Triskelis Art homepage" class="hero-image">
 
-    <div class="nav-links">
-      <a href="artwork.html">ARTWORK</a>
-      <a href="information.html">INFORMATION</a>
-      <a href="patronage.html">PATRONAGE</a>
-    </div>
+    <img
+      src="resources/FullPageMock3.jpg"
+      alt="Triskelis Art homepage"
+      class="hero-image"
+    >
 
-    <!-- CONTACT LINK -->
-    <div class="contact-link">
-      <a id="contact-email" href="#">CONTACT</a>
+    <!-- SINGLE RESPONSIVE OVERLAY -->
+    <div class="overlay-content">
+
+      <div class="nav-links">
+        <a href="artwork.html">ARTWORK</a>
+        <a href="information.html">INFORMATION</a>
+        <a href="patronage.html">PATRONAGE</a>
+      </div>
+
+      <div class="contact-link">
+        <a id="contact-email" href="#">CONTACT</a>
+      </div>
+
     </div>
 
   </div>
@@ -137,5 +154,6 @@
 
     emailLink.href = "mailto:" + user + "@" + domain;
   </script>
+
 </body>
 </html>
